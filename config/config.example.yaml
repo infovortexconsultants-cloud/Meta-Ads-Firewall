@@ -1,0 +1,13 @@
+# Vortex - Meta Ads Firewall example configuration
+firewall:
+  monitoring_interval: 60
+
+meta_api:
+  access_token: 'YOUR_ACCESS_TOKEN'
+  ad_account_id: 'act_123456789'
+
+logging:
+  level: INFO
+
+# Database path (default uses /var/lib/meta-ads-firewall/firewall.db)
+database_path: '/var/lib/meta-ads-firewall/firewall.db'

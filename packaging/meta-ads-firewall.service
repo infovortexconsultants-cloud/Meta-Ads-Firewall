@@ -1,0 +1,17 @@
+[Unit]
+Description=Vortex Meta Ads Firewall
+After=network.target
+
+[Service]
+Type=simple
+User=metaadsfw
+Group=metaadsfw
+ExecStart=/opt/meta-ads-firewall/meta-ads-firewall --config /etc/meta-ads-firewall/config.yaml
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=65536
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
