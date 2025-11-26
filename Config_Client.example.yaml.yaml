@@ -1,0 +1,46 @@
+# Client Configuration Template
+# Copy this file to client_config.yaml and fill in your details
+
+client:
+  name: "Client Business Name"
+  industry: "ecommerce"  # ecommerce, lead_generation, brand_awareness
+  
+meta_api:
+  access_token: "your_meta_access_token_here"
+  ad_account_id: "act_your_ad_account_id"
+  business_id: "your_business_id"
+  app_secret: "your_app_secret"
+
+security_rules:
+  allowed_countries:
+    - "US"
+    - "CA" 
+    - "GB"
+    - "AU"
+    - "DE"
+    
+  approved_domains:
+    - "client-domain.com"
+    - "trusted-partner.com"
+    
+  suspicious_keywords:
+    - "free"
+    - "win"
+    - "prize"
+    - "urgent"
+    - "click here"
+
+alert_contacts:
+  primary: "client@email.com"
+  technical: "tech@vortexconsultants.com"
+  emergency: "+1234567890"
+
+monitoring:
+  working_hours:
+    start: "09:00"
+    end: "17:00"
+    timezone: "UTC"
+  
+  excluded_campaigns: 
+    - "test-campaign"
+    - "internal-campaign"

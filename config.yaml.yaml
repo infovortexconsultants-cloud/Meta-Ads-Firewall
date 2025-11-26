@@ -1,0 +1,40 @@
+# Vortex Firewall Main Configuration
+
+firewall:
+  monitoring_interval: 300  # 5 minutes in seconds
+  max_retries: 3
+  retry_delay: 60
+
+security:
+  thresholds:
+    spend_spike: 2.0        # 200% increase
+    ctr_drop: 0.5           # 50% decrease  
+    suspicious_clicks: 100   # per hour
+    new_country_ratio: 0.3   # 30% from new countries
+    budget_breach: 1.1       # 110% of daily budget
+
+  auto_actions:
+    pause_campaign_critical: true
+    pause_adset_high_risk: true
+    notify_on_medium_risk: true
+
+alerts:
+  email:
+    enabled: true
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    
+  slack:
+    enabled: false
+    webhook_url: "your_slack_webhook"
+    
+  sms:
+    enabled: false
+    twilio_sid: "your_twilio_sid"
+    twilio_token: "your_twilio_token"
+
+logging:
+  level: "INFO"
+  file_path: "logs/firewall.log"
+  max_file_size: 10485760  # 10MB
+  backup_count: 5
